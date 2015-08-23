@@ -1,0 +1,5 @@
+/build/
+/dist/
+/pycharmap.egg-info/
+/__pycache__/
+/format
