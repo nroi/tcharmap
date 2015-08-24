@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 
 setup(
-    name = "pycharmap",
+    name = "tcharmap",
     version = "0.1",
-    packages = ['pycharmap'],
+    packages = ['tcharmap'],
     package_data = {
-        'pycharmap': ['charmap']
+        'tcharmap': ['charmap']
     },
     py_modules = ['__main__'],
     install_requires = "PyYAML"

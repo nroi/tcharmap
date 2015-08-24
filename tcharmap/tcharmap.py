@@ -47,7 +47,7 @@ def read_entries():
     """Parses the included file into its entries"""
     entries = []
     user_dict = user_defined_descriptions(
-        os.path.join(get_config_home(), 'pycharmap', 'descriptions'))
+        os.path.join(get_config_home(), 'tcharmap', 'descriptions'))
     charmap_txt = resource_string(__name__, 'charmap').decode('utf-8')
     lines = charmap_txt.split('\n')[:-1]  # discard last newline
     for line in lines:
@@ -137,7 +137,7 @@ class Form(QDialog):
         self.setLayout(layout)
         self.lineedit.textChanged[str].connect(self.update_query)
         self.lineedit.setFocus()
-        self.setWindowTitle("pycharmap")
+        self.setWindowTitle("tcharmap")
         self.results = self.lookup("")
         self.table.setColumnCount(3)
         self.table.horizontalHeader().setStretchLastSection(True)
@@ -177,7 +177,7 @@ class Form(QDialog):
 
 def get_settings():
     """Returns a dictionary containing all settings"""
-    settings_path = os.path.join(get_config_home(), 'pycharmap', 'settings.yaml')
+    settings_path = os.path.join(get_config_home(), 'tcharmap', 'settings.yaml')
     try:
         return yaml.load(open(settings_path))
     except FileNotFoundError:

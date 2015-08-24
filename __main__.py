@@ -1,3 +1,3 @@
-from pycharmap import pycharmap
+from tcharmap import tcharmap
 
-pycharmap.main()
+tcharmap.main()
