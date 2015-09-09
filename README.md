@@ -1,0 +1,18 @@
+tcharmap is a simple GUI that provides an overview of unicode characters and
+their LaTeX counterpart. The mappings are mostly based on
+http://www.w3.org/Math/characters/unicode.xml.
+
+## Usage
+Start typing what you're looking for. You can enter a single unicode character
+(e.g. α) in order to find the LaTeX counterpart or some text that is part of the
+description (e.g. alpha).
+
+hjkl-based movements are supported: Hit \<TAB\> in order to switch focus to the
+results, choose the desired result with the hjkl keys. The currently selected cell can be
+automatically copied by setting 'auto\_copy' to True: Create a yaml file
+```
+auto_copy:
+    True
+```
+and save it in $XDG\_CONFIG\_HOME/tcharmap/settings.yaml (or whatever directory
+is used for settings on your operating system)
