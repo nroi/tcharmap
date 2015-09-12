@@ -77,6 +77,7 @@ class Form(QDialog):
     """The main window used to display all entries"""
 
     def eventFilter(self, obj, event):
+        """intercept hjkl-keys"""
         if obj == self.table and event.type() == QEvent.KeyPress:
             if event.key() == Qt.Key_H:
                 new_col = max(0, self.table.currentColumn() - 1)
