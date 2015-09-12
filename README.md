@@ -2,6 +2,11 @@ tcharmap is a simple GUI that provides an overview of unicode characters and
 their LaTeX counterpart. The mappings are mostly based on
 http://www.w3.org/Math/characters/unicode.xml.
 
+## Requirements
+* Python3
+* PyQt5
+* [PyYAML](https://pypi.python.org/pypi/PyYAML/3.11)
+
 ## Usage
 Start typing what you're looking for. You can enter a single unicode character
 (e.g. α) in order to find the LaTeX counterpart or some text that is part of the
