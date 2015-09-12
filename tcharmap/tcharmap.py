@@ -25,9 +25,9 @@ def get_config_home():
         except KeyError:
             raise KeyError("Neither $XDG_CONFIG_HOME nor $HOME is defined")
     elif platform.system() == 'Windows':
-        return os.environ('appdata') # TODO or %appdata%?
+        return os.environ['appdata']
     elif platform.system() == 'Darwin':
-        return os.path.join(os.environ('HOME'), 'Library', 'Preferences')
+        return os.path.join(os.environ['HOME'], 'Library', 'Preferences')
     else:
         try:
             return os.environ.get('XDG_CONFIG_HOME', None) or os.environ['HOME']
