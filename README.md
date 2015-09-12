@@ -19,5 +19,6 @@ automatically copied by setting 'auto\_copy' to True: Create a yaml file
 auto_copy:
     True
 ```
-and save it in $XDG\_CONFIG\_HOME/tcharmap/settings.yaml (or whatever directory
-is used for settings on your operating system)
+and save it in $XDG\_CONFIG\_HOME/tcharmap/settings.yaml (if you're not on
+Linux, replace $XDG\_CONFIG\_HOME by whatever is being used on your operating
+system for application settings).
