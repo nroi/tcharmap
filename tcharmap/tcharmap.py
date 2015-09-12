@@ -81,22 +81,18 @@ class Form(QDialog):
             if event.key() == Qt.Key_H:
                 new_col = max(0, self.table.currentColumn() - 1)
                 self.table.setCurrentCell(self.table.currentRow(), new_col)
-                self.paste()
                 return True
             elif event.key() == Qt.Key_J:
                 new_row = min(self.table.rowCount() - 1, self.table.currentRow() + 1)
                 self.table.setCurrentCell(new_row, self.table.currentColumn())
-                self.paste()
                 return True
             elif event.key() == Qt.Key_K:
                 new_row = max(0, self.table.currentRow() - 1)
                 self.table.setCurrentCell(new_row, self.table.currentColumn())
-                self.paste()
                 return True
             elif event.key() == Qt.Key_L:
                 new_col = min(2, self.table.currentColumn() + 1)
                 self.table.setCurrentCell(self.table.currentRow(), new_col)
-                self.paste()
                 return True
             elif event.key() == Qt.Key_Tab:
                 self.lineedit.setFocus()
@@ -119,8 +115,8 @@ class Form(QDialog):
         """Update results and reset x-y coordinates"""
         text = self.lineedit.text()
         self.results = self.lookup(text)
-        self.paste()
         self.update_ui()
+        self.copy_entry(self.table.currentRow(), self.table.currentColumn())
 
     def __init__(self, settings, parent=None):
         super(Form, self).__init__(parent)
@@ -131,6 +127,7 @@ class Form(QDialog):
         self.lineedit.selectAll()
         self.table = QTableWidget()
         self.table.installEventFilter(self)
+        self.table.currentCellChanged[int, int, int, int].connect(self.copy_entry_slot)
         layout = QVBoxLayout()
         layout.addWidget(self.table)
         layout.addWidget(self.lineedit)
@@ -148,12 +145,15 @@ class Form(QDialog):
         self.resize(540, 530)
         self.update_ui()
 
-    def paste(self):
-        """Paste the currently selected entry"""
+    def copy_entry(self, row, col):
+        """Copy the currently selected entry"""
         if self.results and self.settings['auto_copy']:
             row, col = self.table.currentRow(), self.table.currentColumn()
-            to_paste = self.results[row][col]
-            self.clipboard.setText(to_paste)
+            to_copy = self.results[row][col]
+            self.clipboard.setText(to_copy)
+
+    def copy_entry_slot(self, row, col, prev_row, prev_col):
+        self.copy_entry(row, col)
 
     def update_ui(self):
         """Update the UI with all entries contained in self.results"""
