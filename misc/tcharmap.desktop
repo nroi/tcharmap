@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=tcharmap
+Comment=Overview of unicode characters and their LaTeX counterpart
+Exec=tcharmap
+Icon=tcharmap
+Terminal=false
+Categories=Utility;
