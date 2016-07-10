@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """Overview of unicode characters and their LaTeX counterpart"""
 
 from PyQt5.QtCore import Qt                     # pylint: disable=E0611
@@ -10,12 +8,15 @@ from PyQt5.QtWidgets import QLineEdit           # pylint: disable=E0611
 from PyQt5.QtWidgets import QVBoxLayout         # pylint: disable=E0611
 from PyQt5.QtWidgets import QTableWidget        # pylint: disable=E0611
 from PyQt5.QtWidgets import QTableWidgetItem    # pylint: disable=E0611
+from PyQt5 import QtGui
 
 import sys
 import os
 import yaml
 import platform
 from pkg_resources import resource_string
+
+import icons_rc
 
 def get_config_home():
     """Returns the directory used for application settings"""
@@ -121,6 +122,8 @@ class Form(QDialog):
 
     def __init__(self, settings, parent=None):
         super(Form, self).__init__(parent)
+        icon = QtGui.QIcon(":/tcharmap.png")
+        self.setWindowIcon(icon)
         self.settings = settings
         self.results = []
         self.entries = read_entries()
