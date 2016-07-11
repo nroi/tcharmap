@@ -16,7 +16,7 @@ import yaml
 import platform
 from pkg_resources import resource_string
 
-import icons_rc
+import tcharmap.resources.icons_rc
 
 def get_config_home():
     """Returns the directory used for application settings"""
