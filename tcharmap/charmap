@@ -281,6 +281,8 @@
 ∦ \nparallel  NOT PARALLEL TO
 ∧ \wedge  LOGICAL AND
 ∨ \vee  LOGICAL OR
+∧ \land  LOGICAL AND
+∨ \lor  LOGICAL OR
 ∩ \cap  INTERSECTION
 ∪ \cup  UNION
 ∫ \int  INTEGRAL
