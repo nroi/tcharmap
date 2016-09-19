@@ -183,7 +183,7 @@ def get_settings():
     """Returns a dictionary containing all settings"""
     settings_path = os.path.join(get_config_home(), 'tcharmap', 'settings.yaml')
     try:
-        return yaml.load(open(settings_path))
+        return yaml.safe_load(open(settings_path))
     except FileNotFoundError:
         return {'auto_copy': False}
 
