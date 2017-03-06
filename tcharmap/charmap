@@ -331,7 +331,7 @@
 ≛ \starequal  STAR EQUALS
 ≜ \triangleq  DELTA EQUAL TO
 ≟ \ElsevierGlyph{225F} QUESTIONED EQUAL TO
-≠ \not = NOT EQUAL TO
+≠ \neq NOT EQUAL TO
 ≡ \equiv  IDENTICAL TO
 ≢ \not\equiv  NOT IDENTICAL TO
 ≤ \leq  LESS-THAN OR EQUAL TO
@@ -1617,3 +1617,4 @@
 ✕ \times MULTIPLICATION X
 – -- EN DASH
 — --- EM DASH
+↔ \leftrightarrow  IFF
