@@ -107,6 +107,7 @@ class Form(QDialog):
         lookup_term = term.lower()
         for char, latex, description, user_description in self.entries:
             if (char == term or
+                    latex.startswith(lookup_term) or
                     latex[1:].startswith(lookup_term) or
                     lookup_term in description.lower() or
                     (user_description and lookup_term in user_description)):
