@@ -273,6 +273,7 @@
 ∘ \circ  RING OPERATOR
 ∙ \bullet  BULLET OPERATOR
 √ \surd  SQUARE ROOT
+√ \sqrt{} SQUARE ROOT
 ∝ \propto  PROPORTIONAL TO
 ∞ \infty  INFINITY
 ∟ \rightangle  RIGHT ANGLE
@@ -1623,4 +1624,3 @@
 — --- EM DASH
 ↔ \leftrightarrow IFF
 ° \degrees DEGREES
-√ \sqrt{} SQUARE ROOT
